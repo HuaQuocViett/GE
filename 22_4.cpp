@@ -133,8 +133,8 @@ struct point Timgd(struct point p){
 		if(pt[i].code != 0 && pt[i+1].code != 0){// ca 2 dinh deu nam ngoai cua so cat
 //			printf("Ma hoa",(pt[i].code& pt[i+1].code));
 			if((pt[i].code & pt[i+1].code) != 0){// khong co giao diem
-				res[0].x = xmin; res[0].y = ymin;
-				res[1].x = xmin; res[1].y =ymin;
+				res[dem].x = xmin; res[dem++].y = ymin;
+				res[dem].x = xmin; res[dem++].y =ymin;
 			}
 			else{ // co 2 giao diem
 			printf("m: %f", m[i]);
@@ -157,7 +157,7 @@ struct point Timgd(struct point p){
 		//ve duong thang noi cac dinh
 		setlinestyle(1,1,2);
 		setcolor(4);
-		for(int i = 0; i < Dem-1; i++){
+		for(int i = 0; i < dem-1; i++){
 		line(res[i].x, res[i].y, res[i + 1].x, res[i + 1].y);
 		}
 	}
